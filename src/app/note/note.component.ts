@@ -17,6 +17,10 @@ export class NoteComponent implements OnInit {
       .subscribe(response => {
         this.notes = response.json();
         console.log(this.notes)
-      });    
+      });
+  }
+
+  receiveNewNote($note) {
+    this.notes.splice(0, 0, $note);
   }
 }

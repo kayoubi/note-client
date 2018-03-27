@@ -1,16 +1,23 @@
 
-<div>
-  <input placeholder="title"/><br/>
-  <textarea placeholder="content"></textarea><br/>
-  <button>save</button>
-</div>
+<app-note-form (newNoteEvent)="receiveNewNote($event)"></app-note-form>
+<br/><br/><br/>
 
+<h3>List of all Notes, you have {{notes.length}} note(s)</h3>
 
-  <h3>List of all Notes, you have {{notes.length}} note(s)</h3>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Title</th>
+    <th scope="col">Content</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let note of notes">
+      <th scope="row" width="10%">{{note.id}}</th>
+      <td width="25%">{{note.title}}</td>
+      <td>{{note.content}}</td>
+    </tr>
+  </tbody>
 
-
-<div *ngFor="let note of notes">
-  <b>{{note.title}}</b><br/> 
-  {{note.summery}}
-  <hr/>
-</div>
+</table>

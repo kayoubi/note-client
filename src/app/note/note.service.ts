@@ -9,7 +9,7 @@ export class NoteService {
     return this.http.get(this.url);
   }
 
-  creatreNote(note) {
+  createNote(note) {
     return this.http.post(this.url, note);
   }
 
