@@ -1,0 +1,16 @@
+
+<div>
+  <input placeholder="title"/><br/>
+  <textarea placeholder="content"></textarea><br/>
+  <button>save</button>
+</div>
+
+
+  <h3>List of all Notes, you have {{notes.length}} note(s)</h3>
+
+
+<div *ngFor="let note of notes">
+  <b>{{note.title}}</b><br/> 
+  {{note.summery}}
+  <hr/>
+</div>
